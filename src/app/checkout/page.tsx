@@ -81,7 +81,7 @@ export default function CheckoutPage() {
 
   const handlePayNow = () => {
     // Navigate to success page
-    router.push("/success");
+    router.push("/level-six-demo/success");
   };
 
   if (!productData) {

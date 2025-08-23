@@ -191,7 +191,7 @@ export default function ProductDetailPage({
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-gray-900">
+          <Link href="/level-six-demo/" className="hover:text-gray-900">
             Home
           </Link>
           <span>/</span>
@@ -199,7 +199,7 @@ export default function ProductDetailPage({
             Collections
           </Link>
           <span>/</span>
-          <Link href="/swimwear" className="hover:text-gray-900">
+          <Link href="/level-six-demo/swimwear" className="hover:text-gray-900">
             Swimwear
           </Link>
         </div>
@@ -642,7 +642,7 @@ export default function ProductDetailPage({
 
         {/* Back to Swimwear */}
         <div className="mt-16 text-center">
-          <Link href="/swimwear">
+          <Link href="/level-six-demo/swimwear">
             <Button className="bg-black hover:bg-gray-800 text-white px-8 py-3">
               ← Back to Swimwear
             </Button>
