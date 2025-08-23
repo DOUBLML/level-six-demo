@@ -27,7 +27,7 @@ export default function SwimwearPage() {
       originalPrice: "$65.00",
       badge: "SALE",
       colors: ["#1a365d", "#2d3748"],
-      image: "bg-blue-900",
+      imageFile: "p-1.png",
       isOnSale: true,
       discount: "50% off",
     },
@@ -38,7 +38,7 @@ export default function SwimwearPage() {
       originalPrice: "$70.00",
       badge: "SALE",
       colors: ["#87ceeb", "#4682b4"],
-      image: "bg-sky-300",
+      imageFile: "p-2.png",
       isOnSale: true,
       discount: "50% off",
     },
@@ -49,7 +49,7 @@ export default function SwimwearPage() {
       originalPrice: "$75.00",
       badge: "SALE",
       colors: ["#87ceeb", "#4682b4"],
-      image: "bg-sky-200",
+      imageFile: "p-3.png",
       isOnSale: true,
       discount: "50% off",
     },
@@ -60,7 +60,7 @@ export default function SwimwearPage() {
       originalPrice: "$80.00",
       badge: "SALE",
       colors: ["#663399", "#8b5a96"],
-      image: "bg-purple-300",
+      imageFile: "p-4.png",
       isOnSale: true,
       discount: "50% off",
     },
@@ -88,7 +88,17 @@ export default function SwimwearPage() {
       {/* Hero Section */}
       <section className="relative h-[400px] bg-gradient-to-r from-blue-400 to-teal-600 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="w-full h-full bg-gradient-to-br from-sky-300 via-teal-400 to-blue-500 flex items-center justify-center">
+          <Image
+            src="/swimwear-hero.jpg"
+            alt="Level Six Swimwear Collection"
+            fill
+            className="object-cover object-center"
+            style={{ objectPosition: "center 30%" }}
+            priority
+          />
+        </div>
+        <div className="relative z-10 h-full flex items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="text-center text-white">
               <h1 className="text-6xl font-bold mb-4">SWIMWEAR</h1>
               <p className="text-xl opacity-90">
@@ -168,17 +178,22 @@ export default function SwimwearPage() {
               className="group cursor-pointer border-0 shadow-sm hover:shadow-lg transition-shadow"
             >
               <CardContent className="p-0">
-                <div
-                  className={`relative ${product.image} h-96 rounded-t-lg overflow-hidden`}
-                >
-                  <div className="absolute top-3 left-3">
+                <div className="relative h-96 rounded-t-lg overflow-hidden bg-teal-100">
+                  <div className="absolute top-3 left-3 z-10">
                     <Badge className="bg-red-600 hover:bg-red-700 text-white">
                       {product.badge}
                     </Badge>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-400 flex items-center justify-center">
-                    <span className="text-gray-600 text-lg">Product Image</span>
-                  </div>
+                  <Image
+                    src={`/${product.imageFile}`}
+                    alt={product.name}
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: "center 5%" }}
+                    quality={100}
+                    priority
+                    unoptimized
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="font-medium text-gray-900 mb-2 group-hover:text-teal-700 text-lg">
