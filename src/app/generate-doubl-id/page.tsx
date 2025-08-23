@@ -359,6 +359,14 @@ export default function GenerateDoublIdPage() {
                         <div className="space-y-4">
                           <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                             <span className="text-lg font-semibold text-gray-900">
+                              Level Six
+                            </span>
+                            <Badge className="bg-green-100 text-green-800">
+                              Avaliable
+                            </Badge>
+                          </div>
+                          <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                            <span className="text-lg font-semibold text-gray-900">
                               Knix
                             </span>
                             <Badge className="bg-green-100 text-green-800">
