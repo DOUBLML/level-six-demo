@@ -173,59 +173,58 @@ export default function SwimwearPage() {
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {swimwearProducts.map((product) => (
-            <Card
-              key={product.id}
-              className="group cursor-pointer border-0 shadow-sm hover:shadow-lg transition-shadow"
-            >
-              <CardContent className="p-0">
-                <div className="relative h-96 rounded-t-lg overflow-hidden bg-teal-100">
-                  <div className="absolute top-3 left-3 z-10">
-                    <Badge className="bg-red-600 hover:bg-red-700 text-white">
-                      {product.badge}
-                    </Badge>
+            <Link key={product.id} href={`/swimwear/products/${product.id}`}>
+              <Card className="group cursor-pointer border-0 shadow-sm hover:shadow-lg transition-shadow">
+                <CardContent className="p-0">
+                  <div className="relative h-96 rounded-t-lg overflow-hidden bg-teal-100">
+                    <div className="absolute top-3 left-3 z-10">
+                      <Badge className="bg-red-600 hover:bg-red-700 text-white">
+                        {product.badge}
+                      </Badge>
+                    </div>
+                    <Image
+                      src={`/${product.imageFile}`}
+                      alt={product.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      style={{ objectPosition: "center 5%" }}
+                      quality={100}
+                      priority
+                      unoptimized
+                    />
                   </div>
-                  <Image
-                    src={`/${product.imageFile}`}
-                    alt={product.name}
-                    fill
-                    className="object-cover"
-                    style={{ objectPosition: "center 5%" }}
-                    quality={100}
-                    priority
-                    unoptimized
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="font-medium text-gray-900 mb-2 group-hover:text-teal-700 text-lg">
-                    {product.name}
-                  </h3>
-                  <div className="flex items-center space-x-2 mb-4">
-                    <span className="text-xl font-semibold text-gray-900">
-                      {product.price}
-                    </span>
-                    {product.originalPrice && (
-                      <>
-                        <span className="text-lg text-gray-500 line-through">
-                          {product.originalPrice}
-                        </span>
-                        <span className="text-sm text-red-600 font-medium">
-                          {product.discount}
-                        </span>
-                      </>
-                    )}
+                  <div className="p-6">
+                    <h3 className="font-medium text-gray-900 mb-2 group-hover:text-teal-700 text-lg">
+                      {product.name}
+                    </h3>
+                    <div className="flex items-center space-x-2 mb-4">
+                      <span className="text-xl font-semibold text-gray-900">
+                        {product.price}
+                      </span>
+                      {product.originalPrice && (
+                        <>
+                          <span className="text-lg text-gray-500 line-through">
+                            {product.originalPrice}
+                          </span>
+                          <span className="text-sm text-red-600 font-medium">
+                            {product.discount}
+                          </span>
+                        </>
+                      )}
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      {product.colors.map((color, index) => (
+                        <div
+                          key={index}
+                          className="w-5 h-5 rounded-full border-2 border-gray-300"
+                          style={{ backgroundColor: color }}
+                        />
+                      ))}
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-1">
-                    {product.colors.map((color, index) => (
-                      <div
-                        key={index}
-                        className="w-5 h-5 rounded-full border-2 border-gray-300"
-                        style={{ backgroundColor: color }}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
