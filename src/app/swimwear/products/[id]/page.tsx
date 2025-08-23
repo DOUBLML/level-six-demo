@@ -151,6 +151,39 @@ export default function ProductDetailPage({
     }
   }, []);
 
+  const handleApplyId = () => {
+    if (!doublId.trim()) return;
+
+    // Save product data to localStorage for checkout
+    const checkoutData = {
+      id: resolvedParams.id,
+      name: product.name,
+      price: product.price,
+      originalPrice: product.originalPrice,
+      selectedColor:
+        product.colors[selectedColor]?.name || product.colors[0]?.name,
+      selectedSize: selectedSize || "S",
+      doublId: doublId,
+      quantity: quantity,
+    };
+
+    localStorage.setItem("checkoutProduct", JSON.stringify(checkoutData));
+
+    // Navigate to checkout
+    router.push("/checkout");
+  };
+
+  const handleScanNow = () => {
+    // Save current product info and navigate to generate DOUBL ID
+    const productInfo = {
+      id: resolvedParams.id,
+      name: product.name,
+      returnUrl: window.location.pathname,
+    };
+    localStorage.setItem("productInfo", JSON.stringify(productInfo));
+    router.push("/generate-doubl-id");
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -290,6 +323,7 @@ export default function ProductDetailPage({
                     </p>
                   </div>
                   <Button
+                    onClick={handleApplyId}
                     className="w-full text-white transition-all duration-200 hover:shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none"
                     style={{ backgroundColor: "#0d7377" }}
                     disabled={!doublId}
@@ -316,7 +350,7 @@ export default function ProductDetailPage({
                   </p>
                   <div className="flex gap-3">
                     <Button
-                      onClick={() => router.push("/generate-doubl-id")}
+                      onClick={handleScanNow}
                       className="text-white flex-1 transition-all duration-200 hover:shadow-lg active:scale-95"
                       style={{ backgroundColor: "#0d7377" }}
                       onMouseEnter={(e) => {
