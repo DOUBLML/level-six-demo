@@ -5,7 +5,23 @@ import { useState, use } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronDown, ArrowLeft, Star, Plus, Search } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  ChevronDown,
+  ArrowLeft,
+  Star,
+  Plus,
+  Search,
+  Minus,
+  ArrowDown,
+} from "lucide-react";
 import Link from "next/link";
 import Header from "@/components/Header";
 
@@ -101,6 +117,8 @@ export default function ProductDetailPage({
   const [selectedColor, setSelectedColor] = useState(0);
   const [selectedSize, setSelectedSize] = useState("S");
   const [quantity, setQuantity] = useState(1);
+  const [doublIdOption, setDoublIdOption] = useState("input");
+  const [doublId, setDoublId] = useState("");
 
   const product = productData[resolvedParams.id as keyof typeof productData];
 
@@ -222,29 +240,124 @@ export default function ProductDetailPage({
               </div>
             </div>
 
-            {/* Size Selection */}
+            {/* DOUBL Fit ID Section */}
             <div>
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-sm font-medium text-gray-900">Size</h3>
-                <button className="text-sm text-gray-600 hover:text-gray-900 flex items-center">
-                  Size chart
-                  <ChevronDown className="w-4 h-4 ml-1" />
-                </button>
-              </div>
-              <div className="flex items-center space-x-2">
-                {["XS", "S", "M", "L", "XL"].map((size) => (
-                  <button
-                    key={size}
-                    onClick={() => setSelectedSize(size)}
-                    className={`w-12 h-12 border rounded-md text-sm font-medium ${
-                      selectedSize === size
-                        ? "border-gray-900 bg-gray-100"
-                        : "border-gray-300 hover:border-gray-400"
-                    }`}
+              <h3 className="text-sm font-medium text-gray-900 mb-4">
+                How would you like to proceed?
+              </h3>
+
+              <Select value={doublIdOption} onValueChange={setDoublIdOption}>
+                <SelectTrigger className="w-full mb-4">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="input">Input DOUBL ID</SelectItem>
+                  <SelectItem value="no-doubl-id">
+                    I don't have a DOUBL ID
+                  </SelectItem>
+                </SelectContent>
+              </Select>
+
+              {doublIdOption === "input" && (
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-900 mb-2">
+                      Enter your DOUBL ID
+                    </label>
+                    <Input
+                      type="text"
+                      placeholder="e.g., AB12-34CD-5678"
+                      value={doublId}
+                      onChange={(e) => setDoublId(e.target.value)}
+                      className="w-full"
+                    />
+                    <p className="text-sm text-gray-600 mt-1">
+                      Your encrypted fit profile; you'll confirm size at
+                      checkout.
+                    </p>
+                  </div>
+                  <Button
+                    className="w-full text-white transition-all duration-200 hover:shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none"
+                    style={{ backgroundColor: "#0d7377" }}
+                    disabled={!doublId}
+                    onMouseEnter={(e) => {
+                      if (!e.currentTarget.disabled) {
+                        e.currentTarget.style.backgroundColor = "#0a5d61";
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!e.currentTarget.disabled) {
+                        e.currentTarget.style.backgroundColor = "#0d7377";
+                      }
+                    }}
                   >
-                    {size}
-                  </button>
-                ))}
+                    Apply ID
+                  </Button>
+                </div>
+              )}
+
+              {doublIdOption === "no-doubl-id" && (
+                <div className="space-y-4">
+                  <p className="text-sm text-gray-600">
+                    Don't have a DOUBL ID yet? Create one in under 60 seconds.
+                  </p>
+                  <div className="flex gap-3">
+                    <Button
+                      className="text-white flex-1 transition-all duration-200 hover:shadow-lg active:scale-95"
+                      style={{ backgroundColor: "#0d7377" }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = "#0a5d61";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = "#0d7377";
+                      }}
+                    >
+                      SCAN NOW
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="text-gray-700 border-gray-300 hover:bg-gray-50 transition-all duration-200 hover:shadow-md active:scale-95 hover:border-gray-400"
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = "#f9fafb";
+                        e.currentTarget.style.borderColor = "#9ca3af";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = "transparent";
+                        e.currentTarget.style.borderColor = "#d1d5db";
+                      }}
+                    >
+                      What is DOUBL ID?
+                    </Button>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Quantity Selection */}
+            <div>
+              <h3 className="text-sm font-medium text-gray-900 mb-3">
+                Quantity
+              </h3>
+              <div className="flex items-center border rounded-lg w-32">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                  className="px-3"
+                >
+                  <Minus className="h-4 w-4" />
+                </Button>
+                <span className="px-4 py-2 border-x flex-1 text-center">
+                  {quantity}
+                </span>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setQuantity(quantity + 1)}
+                  className="px-3"
+                >
+                  <Plus className="h-4 w-4" />
+                </Button>
               </div>
             </div>
 
@@ -296,11 +409,17 @@ export default function ProductDetailPage({
 
             {/* Add to Cart */}
             <div className="space-y-4">
-              <Button className="w-full bg-teal-700 hover:bg-teal-800 text-white py-3 text-lg">
+              <Button
+                className="w-full text-white py-3 text-lg font-medium"
+                style={{ backgroundColor: "#0d7377" }}
+              >
                 Add to cart
               </Button>
 
-              <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3">
+              <Button
+                className="w-full text-white py-3"
+                style={{ backgroundColor: "#6366f1" }}
+              >
                 Buy with ShopPay
               </Button>
 
@@ -310,7 +429,10 @@ export default function ProductDetailPage({
             </div>
 
             {/* Buy it Locally */}
-            <Button className="w-full bg-teal-700 hover:bg-teal-800 text-white py-3">
+            <Button
+              className="w-full text-white py-3"
+              style={{ backgroundColor: "#0d7377" }}
+            >
               Buy it locally
             </Button>
 
@@ -581,7 +703,6 @@ export default function ProductDetailPage({
           </div>
         </div>
       </footer>
-      
     </div>
   );
 }
