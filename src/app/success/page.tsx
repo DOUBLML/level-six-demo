@@ -14,6 +14,7 @@ import {
   Database,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import Header from "@/components/Header";
 
 export default function SuccessPage() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -80,8 +81,9 @@ export default function SuccessPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Header />
       {/* Header */}
-      <header className="bg-white border-b sticky top-0 z-50">
+      {/* <header className="bg-white border-b sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Button
@@ -98,7 +100,7 @@ export default function SuccessPage() {
             <div className="w-32"></div>
           </div>
         </div>
-      </header>
+      </header> */}
 
       {/* Success Message */}
       <div className="bg-green-50 border-b">
@@ -571,6 +573,108 @@ export default function SuccessPage() {
           </div>
         )}
       </div>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-16 mt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center mb-4">
+                <div className="w-8 h-8 bg-teal-700 rounded mr-3"></div>
+                <h3 className="text-xl font-bold">LEVEL SIX</h3>
+              </div>
+              <p className="text-gray-400 text-sm">
+                Professional water sports equipment designed for adventure
+                seekers and professionals worldwide.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4">SHOP</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>
+                  <a href="#" className="hover:text-white">
+                    Men
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white">
+                    Women
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white">
+                    Kids
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white">
+                    Gear
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4">SUPPORT</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>
+                  <a href="#" className="hover:text-white">
+                    Contact Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white">
+                    Size Guide
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white">
+                    Returns
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white">
+                    Warranty
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4">COMPANY</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>
+                  <a href="#" className="hover:text-white">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white">
+                    Sustainability
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white">
+                    Careers
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white">
+                    Press
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-400">
+            <p>
+              &copy; 2025 Level Six. All rights reserved. | Made in Canada 🍁
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
