@@ -284,7 +284,7 @@ export default function SuccessPage() {
                         muted
                       >
                         <source
-                          src="/DOUBL TAILOR Demo - Made with Clipchamp.mp4"
+                          src="/level-six-demo/DOUBL TAILOR Demo - Made with Clipchamp.mp4"
                           type="video/mp4"
                         />
                         Your browser does not support the video tag.

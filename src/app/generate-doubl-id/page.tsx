@@ -161,7 +161,10 @@ export default function GenerateDoublIdPage() {
                         playsInline
                         muted
                       >
-                        <source src="/DOUBL-scan-demo.mp4" type="video/mp4" />
+                        <source
+                          src="/level-six-demo/DOUBL-scan-demo.mp4"
+                          type="video/mp4"
+                        />
                         Your browser does not support the video tag.
                       </video>
 

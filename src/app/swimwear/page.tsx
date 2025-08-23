@@ -89,7 +89,7 @@ export default function SwimwearPage() {
       <section className="relative h-[400px] bg-gradient-to-r from-blue-400 to-teal-600 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/swimwear-hero.jpg"
+            src="/level-six-demo/swimwear-hero.jpg"
             alt="Level Six Swimwear Collection"
             fill
             className="object-cover object-center"
@@ -183,7 +183,7 @@ export default function SwimwearPage() {
                       </Badge>
                     </div>
                     <Image
-                      src={`/${product.imageFile}`}
+                      src={`/level-six-demo/${product.imageFile}`}
                       alt={product.name}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"

@@ -644,7 +644,7 @@ export default function CheckoutPage() {
                   1
                 </span>
                 <Image
-                  src={`/p-${getProductIndex(productData.id)}.png`}
+                  src={`/level-six-demo/p-${getProductIndex(productData.id)}.png`}
                   alt={productData.name}
                   fill
                   className="object-cover"

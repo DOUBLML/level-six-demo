@@ -38,8 +38,12 @@ const productData = {
       { name: "Smoke Blue", value: "#87ceeb", isSelected: true },
       { name: "Navy", value: "#1a365d" },
     ],
-    mainImage: "p-1.png",
-    additionalImages: ["p-1-1.png", "p-1-2.png", "p-1-3.png"],
+    mainImage: "/level-six-demo/p-1.png",
+    additionalImages: [
+      "/level-six-demo/p-1-1.png",
+      "/level-six-demo/p-1-2.png",
+      "/level-six-demo/p-1-3.png",
+    ],
     discount: "50% off",
     description: "The perfect blend of style and comfort for water activities.",
     features: ["Quick-dry fabric", "Chlorine resistant", "UPF 50+ protection"],
@@ -57,8 +61,12 @@ const productData = {
       { name: "Sky Blue", value: "#87ceeb", isSelected: true },
       { name: "Steel Blue", value: "#4682b4" },
     ],
-    mainImage: "p-2.png",
-    additionalImages: ["p-2-1.png", "p-2-2.png", "p-2-3.png"],
+    mainImage: "/level-six-demo/p-2.png",
+    additionalImages: [
+      "/level-six-demo/p-2-1.png",
+      "/level-six-demo/p-2-2.png",
+      "/level-six-demo/p-2-3.png",
+    ],
     discount: "50% off",
     description: "Reversible design for versatile styling options.",
     features: ["Reversible design", "Quick-dry fabric", "Saltwater resistant"],
@@ -76,8 +84,12 @@ const productData = {
       { name: "Sky Blue", value: "#87ceeb", isSelected: true },
       { name: "Steel Blue", value: "#4682b4" },
     ],
-    mainImage: "p-3.png",
-    additionalImages: ["p-3-1.png", "p-3-2.png", "p-3-3.png"],
+    mainImage: "/level-six-demo/p-3.png",
+    additionalImages: [
+      "/level-six-demo/p-3-1.png",
+      "/level-six-demo/p-3-2.png",
+      "/level-six-demo/p-3-3.png",
+    ],
     discount: "50% off",
     description: "Flattering bikini top with adjustable straps.",
     features: ["Adjustable straps", "Removable padding", "Quick-dry fabric"],
@@ -95,8 +107,12 @@ const productData = {
       { name: "Purple", value: "#663399", isSelected: true },
       { name: "Lavender", value: "#8b5a96" },
     ],
-    mainImage: "p-4.png",
-    additionalImages: ["p-4-1.png", "p-4-2.png", "p-4-3.png"],
+    mainImage: "/level-six-demo/p-4.png",
+    additionalImages: [
+      "/level-six-demo/p-4-1.png",
+      "/level-six-demo/p-4-2.png",
+      "/level-six-demo/p-4-3.png",
+    ],
     discount: "50% off",
     description: "Comfortable swim shorts with reversible design.",
     features: ["Reversible design", "Elastic waistband", "Quick-dry fabric"],
@@ -223,7 +239,7 @@ export default function ProductDetailPage({
                     }`}
                   >
                     <Image
-                      src={`/${image}`}
+                      src={`/level-six-demo/${image}`}
                       alt={`${product.name} view ${index + 1}`}
                       width={80}
                       height={80}
@@ -237,7 +253,7 @@ export default function ProductDetailPage({
               <div className="flex-1">
                 <div className="relative aspect-square bg-teal-50 rounded-lg overflow-hidden">
                   <Image
-                    src={`/${allImages[selectedImageIndex]}`}
+                    src={`/level-six-demo/${allImages[selectedImageIndex]}`}
                     alt={product.name}
                     fill
                     className="object-cover"
@@ -611,7 +627,7 @@ export default function ProductDetailPage({
                         </Button>
                       </div>
                       <Image
-                        src={`/${otherProduct.mainImage}`}
+                        src={`/level-six-demo/${otherProduct.mainImage}`}
                         alt={otherProduct.name}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"

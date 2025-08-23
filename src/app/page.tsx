@@ -14,7 +14,7 @@ export default function LevelSixHomepage() {
       <section className="relative h-[600px] bg-gray-100 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/level-six-hero.jpg"
+            src="/level-six-demo/level-six-hero.jpg"
             alt="Level Six Hero - Kayaker in action"
             fill
             className="object-cover"
@@ -66,7 +66,7 @@ export default function LevelSixHomepage() {
               <div key={index} className="text-center group cursor-pointer">
                 <div className="w-32 h-32 bg-teal-100 rounded-lg mb-4 mx-auto overflow-hidden">
                   <Image
-                    src={`/${category.image}`}
+                    src={`/level-six-demo/${category.image}`}
                     alt={category.name}
                     width={128}
                     height={128}
