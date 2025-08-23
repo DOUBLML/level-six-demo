@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useState, use } from "react";
+import { useState, use, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -113,6 +114,7 @@ export default function ProductDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const resolvedParams = use(params);
+  const router = useRouter();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [selectedColor, setSelectedColor] = useState(0);
   const [selectedSize, setSelectedSize] = useState("S");
@@ -137,6 +139,17 @@ export default function ProductDetailPage({
     }
     return null;
   };
+
+  useEffect(() => {
+    // Check for generated DOUBL ID from localStorage
+    const generatedId = localStorage.getItem("generatedDoublId");
+    if (generatedId) {
+      setDoublId(generatedId);
+      setDoublIdOption("input");
+      // Clear the stored ID
+      localStorage.removeItem("generatedDoublId");
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -303,6 +316,7 @@ export default function ProductDetailPage({
                   </p>
                   <div className="flex gap-3">
                     <Button
+                      onClick={() => router.push("/generate-doubl-id")}
                       className="text-white flex-1 transition-all duration-200 hover:shadow-lg active:scale-95"
                       style={{ backgroundColor: "#0d7377" }}
                       onMouseEnter={(e) => {
