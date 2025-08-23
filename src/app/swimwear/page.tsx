@@ -3,18 +3,9 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Search,
-  User,
-  ShoppingBag,
-  ChevronDown,
-  Filter,
-  Grid3X3,
-  List,
-} from "lucide-react";
+import { Filter, Grid3X3, List, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import {
   Select,
@@ -23,9 +14,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import Header from "@/components/Header";
 
 export default function SwimwearPage() {
-  const [isWomenDropdownOpen, setIsWomenDropdownOpen] = useState(false);
   const [viewMode, setViewMode] = useState("grid");
 
   const swimwearProducts = [
@@ -77,123 +68,7 @@ export default function SwimwearPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Top Banner */}
-      <div className="bg-teal-700 text-white text-center py-2 text-sm">
-        🍁 A Canadian Owned & Operated Company 🍁
-      </div>
-
-      {/* Navigation */}
-      <nav className="border-b bg-white sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <div className="flex-shrink-0 flex items-center">
-              <Link href="/">
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-teal-700 rounded mr-3"></div>
-                  <h1 className="text-2xl font-bold text-black">LEVEL SIX</h1>
-                </div>
-              </Link>
-            </div>
-
-            {/* Navigation Links */}
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
-                <a
-                  href="#"
-                  className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium"
-                >
-                  MEN
-                </a>
-                <div className="relative">
-                  <button
-                    onMouseEnter={() => setIsWomenDropdownOpen(true)}
-                    onMouseLeave={() => setIsWomenDropdownOpen(false)}
-                    className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium flex items-center"
-                  >
-                    WOMEN
-                    <ChevronDown className="ml-1 h-4 w-4" />
-                  </button>
-
-                  {/* Women Dropdown */}
-                  {isWomenDropdownOpen && (
-                    <div
-                      className="absolute top-full left-0 mt-0 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50"
-                      onMouseEnter={() => setIsWomenDropdownOpen(true)}
-                      onMouseLeave={() => setIsWomenDropdownOpen(false)}
-                    >
-                      <div className="py-1">
-                        <Link
-                          href="/swimwear"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                        >
-                          Swimwear
-                        </Link>
-                        <a
-                          href="#"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                        >
-                          Dry Suits
-                        </a>
-                        <a
-                          href="#"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                        >
-                          Wetsuits
-                        </a>
-                        <a
-                          href="#"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                        >
-                          Accessories
-                        </a>
-                      </div>
-                    </div>
-                  )}
-                </div>
-                <a
-                  href="#"
-                  className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium"
-                >
-                  KIDS
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium"
-                >
-                  GEAR
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium"
-                >
-                  SALE
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium"
-                >
-                  SUSTAINABILITY+REPAIR
-                </a>
-              </div>
-            </div>
-
-            {/* Right side */}
-            <div className="flex items-center space-x-4">
-              <div className="relative">
-                <Input
-                  type="search"
-                  placeholder="Search..."
-                  className="w-64 pl-4 pr-10"
-                />
-                <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-              </div>
-              <User className="h-6 w-6 text-gray-600 cursor-pointer" />
-              <ShoppingBag className="h-6 w-6 text-gray-600 cursor-pointer" />
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Header />
 
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
