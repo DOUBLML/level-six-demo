@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  basePath: '/level-six-demo',
+  assetPrefix: '/level-six-demo/',
 };
 
 export default nextConfig;
