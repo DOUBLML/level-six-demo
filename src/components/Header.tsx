@@ -22,7 +22,7 @@ export default function Header() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/level-six-demo/">
+              <Link href="/">
                 <div className="flex items-center">
                   <div className="w-8 h-8 bg-teal-700 rounded mr-3"></div>
                   <h1 className="text-2xl font-bold text-black">LEVEL SIX</h1>

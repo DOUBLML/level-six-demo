@@ -1047,7 +1047,7 @@ export default function DoublB2BPortal() {
           <div className="flex items-center gap-3">
             <Button
               variant="ghost"
-              onClick={() => router.push("/level-six-demo/")}
+              onClick={() => router.push("/")}
               className="text-gray-700 hover:text-gray-900 mr-2"
             >
               ← Back to Home

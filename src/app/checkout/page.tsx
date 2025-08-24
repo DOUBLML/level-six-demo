@@ -81,7 +81,7 @@ export default function CheckoutPage() {
 
   const handlePayNow = () => {
     // Navigate to success page
-    router.push("/level-six-demo/success");
+    router.push("/success");
   };
 
   if (!productData) {
@@ -644,7 +644,9 @@ export default function CheckoutPage() {
                   1
                 </span>
                 <Image
-                  src={`/level-six-demo/p-${getProductIndex(productData.id)}.png`}
+                  src={`/level-six-demo/p-${getProductIndex(
+                    productData.id
+                  )}.png`}
                   alt={productData.name}
                   fill
                   className="object-cover"
