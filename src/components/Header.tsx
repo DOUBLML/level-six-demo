@@ -21,14 +21,16 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <div className="flex-shrink-0 flex items-center">
-              <Link href="/">
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-teal-700 rounded mr-3"></div>
-                  <h1 className="text-2xl font-bold text-black">LEVEL SIX</h1>
-                </div>
-              </Link>
-            </div>
+            <Link href="/" className="flex items-center">
+              {/* Level Six Logo Image */}
+              <Image
+                src="/level-six-logo.png"
+                alt="Level Six Logo"
+                width={240}
+                height={80}
+                className="h-16 w-auto"
+              />
+            </Link>
 
             {/* Navigation Links */}
             <div className="hidden md:block">
