@@ -764,15 +764,15 @@ function ApiKeysPage() {
 function ReportsPage() {
   // Mock data for reports
   const orders = [
-    { date: "2025-06-01", sku: "BRA001", orders: 42, returns: 0, sales: 4200 },
-    { date: "2025-06-08", sku: "BRA002", orders: 65, returns: 0, sales: 6500 },
-    { date: "2025-06-15", sku: "BRA003", orders: 57, returns: 1, sales: 5700 },
-    { date: "2025-06-22", sku: "BRA001", orders: 71, returns: 0, sales: 7100 },
-    { date: "2025-06-29", sku: "BRA004", orders: 88, returns: 0, sales: 8800 },
-    { date: "2025-07-06", sku: "BRA002", orders: 93, returns: 0, sales: 9300 },
+    { date: "2025-06-01", sku: "SWIM001", orders: 42, returns: 0, sales: 4200 },
+    { date: "2025-06-08", sku: "SWIM002", orders: 65, returns: 0, sales: 6500 },
+    { date: "2025-06-15", sku: "SWIM003", orders: 57, returns: 1, sales: 5700 },
+    { date: "2025-06-22", sku: "SWIM001", orders: 71, returns: 0, sales: 7100 },
+    { date: "2025-06-29", sku: "SWIM004", orders: 88, returns: 0, sales: 8800 },
+    { date: "2025-07-06", sku: "SWIM002", orders: 93, returns: 0, sales: 9300 },
     {
       date: "2025-07-13",
-      sku: "BRA005",
+      sku: "SWIM005",
       orders: 104,
       returns: 0,
       sales: 10400,
