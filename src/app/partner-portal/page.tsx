@@ -51,31 +51,40 @@ const MOCK_BRANDS = [
 
 const MOCK_SKUS = [
   {
-    id: "BRA-TEE-V2",
-    name: "Seamless T-Shirt Bra V2",
-    category: "Bras",
+    id: "BIKINI-BTM-ECL",
+    name: "Eclipse Bikini Bottom",
+    category: "Swimwear",
     status: "Active",
     totalOrders: 1842,
     avgLeadTimeDays: 6.4,
     returnRate: 0.6,
   },
   {
-    id: "BRA-MAST-01",
-    name: "Mastectomy Bra",
-    category: "Bras",
-    status: "Pilot",
-    totalOrders: 218,
-    avgLeadTimeDays: 7.1,
+    id: "BIKINI-BTM-SUN",
+    name: "Sunflare Reversible Bikini Bottom",
+    category: "Swimwear",
+    status: "Active",
+    totalOrders: 934,
+    avgLeadTimeDays: 5.8,
     returnRate: 0.3,
   },
   {
-    id: "UND-CLASSIC",
-    name: "Classic Brief",
-    category: "Underwear",
+    id: "BIKINI-TOP-DAI",
+    name: "Daisy Reversible Bikini Top",
+    category: "Swimwear",
+    status: "Pilot",
+    totalOrders: 218,
+    avgLeadTimeDays: 7.1,
+    returnRate: 0.4,
+  },
+  {
+    id: "SWIM-SHORTS-CV",
+    name: "Cove Reversible Swim Shorts",
+    category: "Swimwear",
     status: "In Dev",
-    totalOrders: 0,
-    avgLeadTimeDays: 0,
-    returnRate: 0,
+    totalOrders: 156,
+    avgLeadTimeDays: 5.2,
+    returnRate: 0.2,
   },
 ];
 
@@ -141,26 +150,28 @@ const MOCK_PATTERNS = {
     dxfUrl: "#",
     pdfUrl: "#",
     objUrl: "#",
-    notes: "TEE-V2 pattern v1.3; center front ease +2mm; strap length -4mm.",
+    notes:
+      "Eclipse bikini bottom pattern v1.3; waist ease +2mm; leg opening -3mm.",
   },
   "CUS-1025": {
     dxfUrl: "#",
     pdfUrl: "#",
     objUrl: "#",
-    notes: "TEE-V2 pattern v1.2; band +3mm; cup seam eased.",
+    notes:
+      "Sunflare reversible pattern v1.2; side seams +3mm; reversible construction.",
   },
   "CUS-1026": {
     dxfUrl: "#",
     pdfUrl: "#",
     objUrl: "#",
-    notes: "Pilot mastectomy cup left; pocket depth +5mm.",
+    notes: "Daisy bikini top pattern; adjustable straps; cup volume optimized.",
   },
 };
 
 const MOCK_ORDERS = [
   {
     id: "ORD-9001",
-    skuId: "BRA-TEE-V2",
+    skuId: "BIKINI-BTM-ECL",
     customerId: "CUS-1024",
     status: "In Production",
     createdAt: "2025-07-30",
@@ -170,7 +181,7 @@ const MOCK_ORDERS = [
   },
   {
     id: "ORD-9034",
-    skuId: "BRA-TEE-V2",
+    skuId: "BIKINI-BTM-SUN",
     customerId: "CUS-1025",
     status: "Shipped",
     createdAt: "2025-08-10",
@@ -180,7 +191,7 @@ const MOCK_ORDERS = [
   },
   {
     id: "ORD-9040",
-    skuId: "BRA-MAST-01",
+    skuId: "BIKINI-TOP-DAI",
     customerId: "CUS-1026",
     status: "Queued",
     createdAt: "2025-08-15",
