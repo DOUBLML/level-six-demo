@@ -24,7 +24,7 @@ export default function Header() {
             <Link href="/" className="flex items-center">
               {/* Level Six Logo Image */}
               <Image
-                src="/level-six-logo.png"
+                src="/level-six-demo/level-six-logo.png"
                 alt="Level Six Logo"
                 width={240}
                 height={80}
